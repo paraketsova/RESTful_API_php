@@ -2,17 +2,18 @@
 
 include_once "Product.php";
 
-include('namesArrays.php');
+include_once "ProductsArray.php";
 
 class App
 {
-  private static $category = ["Roses", "Klematis"];
-  private static $roses = $$rosesArray;
-  private static $roses_description = $rosesDescriptionArray;
+  //private static $category = ["Roses", "Klematis"];
+  //private static $rosesArray;
+  //private static $roses_description = $rosesDescriptionArray;
 
-  private static $price = rand(170, 290);
-  private static $image = null;
-  private static $limit = isset($_GET["limit"]) ? $_GET["limit"] : 20;
+  //private static $price = rand(170, 290);
+  //private static $image = null;
+  //private static $limit = isset($_GET["limit"]) ? $_GET["limit"] : 20;
+  private static $limit = 20;
   private static $errors = array();
 
   /**
@@ -59,14 +60,18 @@ class App
    */
   private static function getProducts()
   {
+    global $rosesArray;
+    global $rosesDescriptionArray;
     $products = array();
     for ($i = 0; $i < self::$limit; $i++) {
-        //$title = self::$roses[i];
+        $title = $rosesArray[$i];
+        $description = $rosesDescriptionArray[$title];
+        $price = rand(180, 250);
         $product= new Product(
-            /*$title,
+            $title,
             $description,
             $price,
-            rand(1, 20), */
+            rand(1, 20),
         );
         array_push($products, $product->toArray());
     }
