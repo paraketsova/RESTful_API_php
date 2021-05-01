@@ -2,36 +2,11 @@
 /**
  * Arrays:
  * ---------
- * $roses - 20 roses' sorts
- * $rosesDescription - description of all roses from $roses
+ * $rosor - 20 roses' sorts and description.
  *
- * $clematis - 20 clematis' sorts
- * $clematisDescription - description of all roses from $roses
+ * $klematis - 20 clematis' sorts and description.
  */
-$rosesArray = [
-  "A SHROPSHIRE LAD",
-  "A WHITER SHADE OF PALE",
-  "ABRAHAM DARBY",
-  "AMADEUS",
-  "BELLE AMOUR",
-  "BONITA RENAISSANCE",
-  "CAMELOT",
-  "CARL NIELSEN",
-  "CHIPPENDALE",
-  "DROTTNINGHOLM",
-  "FELLOWSHIP",
-  "GELBE DAGMAR HASTRUP",
-  "HANSESTADT ROSTOCK",
-  "INGRID BERGMAN",
-  "LADY OF SHALOTT",
-  "MUNSTEAD WOOD",
-  "PEACE",
-  "SCENTED GARDEN",
-  "SCHNEEWALTZER",
-  "TEA CLIPPER",
-];
-
-$rosesDescriptionArray = [
+$rosor = [
   "A SHROPSHIRE LAD" => 'En stor, kraftigt växande ros som med fördel placeras längre bak i rabatten. Den är besläktad med ’Leander’, en ros som klarar sig mycket bra i Sverige och från vilken den ärvt sitt kraftiga, friska växtsätt och stora, glänsande bladverk.',
   "A WHITER SHADE OF PALE" => 'En mycket vacker tehybrid i vit och blekrosa nyanser. Stora, perfekt formade, fyllda blommor med stark fin doft. Blommar länge och har ett friskt bladverk.',
   "ABRAHAM DARBY" => 'Bildar en fin, välformad buskros. Redan tidigt på sommaren ger den stora, tättfyllda blommor i olika färgnyanser från gult, aprikos och rosa. Den är rikligt remonterande under hela säsongen. Bladverket är glänsande och modernt till utseendet.',
@@ -54,30 +29,7 @@ $rosesDescriptionArray = [
   "TEA CLIPPER" => 'Ännu en engelsk ros med underbar doft! De rosettformade, aprikos blommorna utsöndrar en härlig blandning av dofter. Te, myrra och frukt och ibland ren citrus känns tydligt även på lite avstånd.'
 ];
 
-$clematisArray = [
-  "KLEMATIS ALBA LUXURIANS",
-  "KLEMATIS ALBINA PLENA E",
-  "KLEMATIS ALIONUSHKA",
-  "KLEMATIS ARABELLA",
-  "KLEMATIS BABY DOLL",
-  "KLEMATIS BALLET SKIRT",
-  "KLEMATIS BLUE TAPERS E",
-  "KLEMATIS COLUMELLA",
-  "KLEMATIS DURANDII",
-  "KLEMATIS FRANZISKA MARIA",
-  "KLEMATIS JACKMANII",
-  "KLEMATIS MADAME JULIA CORREVON",
-  "KLEMATIS NELLY MOSER",
-  "KLEMATIS NINON",
-  "KLEMATIS PRINCESS KATE",
-  "KLEMATIS THE PRESIDENT",
-  "KLEMATIS TANGUTICA LITTLE LEMONS",
-  "KLEMATIS SWEET SUMMER LOVE",
-  "KLEMATIS SUMMER SNOW",
-  "KLEMATIS SÖDERTÄLJE E"
-];
-
-$clematisDescription = [
+$klematis = [
   "KLEMATIS ALBA LUXURIANS" => 'Lång blomning med 7-8 cm stora blommor. Sol, halvskugga,skugga',
   "KLEMATIS ALBINA PLENA E" => 'En mycket vacker vit klematis med 6-8 cm stora fyllda, klockformade vita blommor med gula ståndare. Riklig blomning i maj. Remonterar. Dekorativa fröställningar. Relativt starkväxande.',
   "KLEMATIS ALIONUSHKA" => 'Rosa färg. M.A. Beskaravainaja, Ukraina år 1961',
@@ -100,3 +52,48 @@ $clematisDescription = [
   "KLEMATIS SÖDERTÄLJE E" => 'Södertälje blommar med ca 6 cm stora blommor i perioden juli-oktober. Det är en mycket rikblommande sort och den är nära vildarten. Kan planteras var som helst men färgen kommer bäst till sin rätt i sol eller halvskugga.',
 
 ];
+/*
+$rosesArray = [
+  "A SHROPSHIRE LAD",
+  "A WHITER SHADE OF PALE",
+  "ABRAHAM DARBY",
+  "AMADEUS",
+  "BELLE AMOUR",
+  "BONITA RENAISSANCE",
+  "CAMELOT",
+  "CARL NIELSEN",
+  "CHIPPENDALE",
+  "DROTTNINGHOLM",
+  "FELLOWSHIP",
+  "GELBE DAGMAR HASTRUP",
+  "HANSESTADT ROSTOCK",
+  "INGRID BERGMAN",
+  "LADY OF SHALOTT",
+  "MUNSTEAD WOOD",
+  "PEACE",
+  "SCENTED GARDEN",
+  "SCHNEEWALTZER",
+  "TEA CLIPPER",
+];
+$clematisArray = [
+  "KLEMATIS ALBA LUXURIANS",
+  "KLEMATIS ALBINA PLENA E",
+  "KLEMATIS ALIONUSHKA",
+  "KLEMATIS ARABELLA",
+  "KLEMATIS BABY DOLL",
+  "KLEMATIS BALLET SKIRT",
+  "KLEMATIS BLUE TAPERS E",
+  "KLEMATIS COLUMELLA",
+  "KLEMATIS DURANDII",
+  "KLEMATIS FRANZISKA MARIA",
+  "KLEMATIS JACKMANII",
+  "KLEMATIS MADAME JULIA CORREVON",
+  "KLEMATIS NELLY MOSER",
+  "KLEMATIS NINON",
+  "KLEMATIS PRINCESS KATE",
+  "KLEMATIS THE PRESIDENT",
+  "KLEMATIS TANGUTICA LITTLE LEMONS",
+  "KLEMATIS SWEET SUMMER LOVE",
+  "KLEMATIS SUMMER SNOW",
+  "KLEMATIS SÖDERTÄLJE E"
+]; */

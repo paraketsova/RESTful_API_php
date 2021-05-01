@@ -60,12 +60,12 @@ class App
    */
   private static function getProducts()
   {
-    global $rosesArray;
-    global $rosesDescriptionArray;
+    global $rosor;
     $products = array();
     for ($i = 0; $i < self::$limit; $i++) {
-        $title = $rosesArray[rand(0, 19)];
-        $description = $rosesDescriptionArray[$title];
+        //$title = $rosesArray[rand(0, 19)];
+        $title = array_rand($rosor,1);
+        $description = $rosor[$title];
         $price = rand(180, 250);
         $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
         $product= new Product(
