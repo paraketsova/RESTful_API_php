@@ -67,10 +67,12 @@ class App
         $title = $rosesArray[rand(0, 19)];
         $description = $rosesDescriptionArray[$title];
         $price = rand(180, 250);
+        $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
         $product= new Product(
             $title,
             $description,
             $price,
+            $image,
             rand(1, 20),
         );
         array_push($products, $product->toArray());

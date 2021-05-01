@@ -54,3 +54,49 @@ $rosesDescriptionArray = [
   "TEA CLIPPER" => 'Ännu en engelsk ros med underbar doft! De rosettformade, aprikos blommorna utsöndrar en härlig blandning av dofter. Te, myrra och frukt och ibland ren citrus känns tydligt även på lite avstånd.'
 ];
 
+$clematisArray = [
+  "KLEMATIS ALBA LUXURIANS",
+  "KLEMATIS ALBINA PLENA E",
+  "KLEMATIS ALIONUSHKA",
+  "KLEMATIS ARABELLA",
+  "KLEMATIS BABY DOLL",
+  "KLEMATIS BALLET SKIRT",
+  "KLEMATIS BLUE TAPERS E",
+  "KLEMATIS COLUMELLA",
+  "KLEMATIS DURANDII",
+  "KLEMATIS FRANZISKA MARIA",
+  "KLEMATIS JACKMANII",
+  "KLEMATIS MADAME JULIA CORREVON",
+  "KLEMATIS NELLY MOSER",
+  "KLEMATIS NINON",
+  "KLEMATIS PRINCESS KATE",
+  "KLEMATIS THE PRESIDENT",
+  "KLEMATIS TANGUTICA LITTLE LEMONS",
+  "KLEMATIS SWEET SUMMER LOVE",
+  "KLEMATIS SUMMER SNOW",
+  "KLEMATIS SÖDERTÄLJE E"
+];
+
+$clematisDescription = [
+  "KLEMATIS ALBA LUXURIANS" => 'Lång blomning med 7-8 cm stora blommor. Sol, halvskugga,skugga',
+  "KLEMATIS ALBINA PLENA E" => 'En mycket vacker vit klematis med 6-8 cm stora fyllda, klockformade vita blommor med gula ståndare. Riklig blomning i maj. Remonterar. Dekorativa fröställningar. Relativt starkväxande.',
+  "KLEMATIS ALIONUSHKA" => 'Rosa färg. M.A. Beskaravainaja, Ukraina år 1961',
+  "KLEMATIS ARABELLA" => 'Blommar mycket rikligt i perioden juni-september med 10-12 cm stora blåvioletta blommor med gula ståndare. Blomman är enkel, klockformig. Växtsättet är örtartat och den behöver stöd.',
+  "KLEMATIS BABY DOLL" => 'Ljusblå blommor med gulla ståndare. Kompakt växtsätt som blir ca 1,5 m hög. Blomning juni-juli och remoneterar.',
+  "KLEMATIS BALLET SKIRT" => 'Blommar i maj månad med 7-10 cm stora halvfyllda klockor som följs av dekorativa fröställningar. Växtsättet är  kompakt och den är mycket härdig, trivs i alla lägen men helst i väldränerad jord.',
+  "KLEMATIS BLUE TAPERS E" => 'Denna sort som även går under namnet Cyanea är fullständigt översållad med ca 5 cm stora blommor i maj och därefter med vackra fröställningar. Blommorna är enkla, klockformiga.',
+  "KLEMATIS COLUMELLA" => 'Columella blommar i maj med 7-10 cm. stora doftande blommor. Dekorativa fröställningar. Fin att plantera vid buskar eller små träd. Även som marktäckare.  Beskär tidigt på våren bort intorkade växtdelar.',
+  "KLEMATIS DURANDII" => 'Blommorna är 8-14 cm stora och när de slår ut djupt sammetsblå. Senare ljusnar den blå färgen.Blommar från slutet av juni fram till oktober. En lättodlad härdig sort som trivs bäst i soliga lägen.',
+  "KLEMATIS FRANZISKA MARIA" => 'Blålila nyanser. Har ett kompakt, brett buskformigt växtsätt och passar t ex i krukor.',
+  "KLEMATIS JACKMANII" => 'En storblommig klematis med bra härdighet. En av de mest kända och odlade klematissorterna. Blommar i perioden juli-september med 10-15 cm stora blommor. Klättrar i träd, klätterrosor, spaljéer och pergolor',
+  "KLEMATIS MADAME JULIA CORREVON" => 'Blommar rikligt i perioden juli-oktober med 7-10 cm stora rubinröda blommor. Passar att odla vid större buskar, pergolor och spaljéer. Höjd 3-3,5 m.',
+  "KLEMATIS NELLY MOSER" => 'Blommar i perioden juni-juli med 15-20 cm stora blommor. Remonterar. Om den fryser ned eller beskärs hårt får man en senare blomning. Klänger i buskar, klätterrosor, små träd och spaljéer.',
+  "KLEMATIS NINON" => 'Denna klematis har vackra vita blommor med eleganta purpurröda ståndare. Blommmar rikligt med ca 10 cm stora blommor i maj-juni, remonterar sedan från juli till början av september. Höjd: 1 m.',
+  "KLEMATIS PRINCESS KATE" => 'Blommar med upprätta liljformade blommor som är ca 4-6 cm stora. Fin att plantera vid träd eller buskar. Beskärs på hösten eller tidig vår till ca 20 cm över marken.',
+  "KLEMATIS THE PRESIDENT" => 'Blomman är 10-18 cm stor och färgen djupt blåviolett. Blommar rikt i juni på fjolårsskotten och senare, i september till oktober på årsskotten. Nedfrysning eller hård beskärning medför senare blomning.',
+  "KLEMATIS TANGUTICA LITTLE LEMONS" => 'Denna ovanliga klematis blommar med ca 5 cm stora blommor i perioden juni-september. Fröställningarna är dekorativa och den är lättodlad, men trivs allra bäst i soliga lägen. Klarar trotta platser.',
+  "KLEMATIS SWEET SUMMER LOVE" => 'Denna ovanliga sort blommar med ca 5 cm stora blommor som har en härlig doft av vanilj och körsbär. Den blommar mycket rikligt i perioden juli-september. Klättrar gärna i träd, klätterrosor, spaljéer och pergolor. Höjd 2,5-3 m.',
+  "KLEMATIS SUMMER SNOW" => 'Helt täckt med 3-4 cm små, doftande blommor från slutet av juni till oktober. Lättodlad och trivs i alla lägen. Kan planteras vid murar, staket, träd, buskar o byggnader. Täcker snabbt stora ytor. Höjd 4-6 m.',
+  "KLEMATIS SÖDERTÄLJE E" => 'Södertälje blommar med ca 6 cm stora blommor i perioden juli-oktober. Det är en mycket rikblommande sort och den är nära vildarten. Kan planteras var som helst men färgen kommer bäst till sin rätt i sol eller halvskugga.',
+
+];
