@@ -76,7 +76,10 @@ class App
         );
         array_push($products, $product->toArray());
     }
-    return $products;
+    //return $products;
+    global $productsArray;
+    return $products = $productsArray;
+
   }
 
   /**
