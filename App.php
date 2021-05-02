@@ -65,8 +65,8 @@ class App
     for ($i = 0; $i < self::$limit; $i++) {
         //$title = $rosesArray[rand(0, 19)];
         $title = array_rand($rosor,1);
-        $description = $rosor[$title];
-        $price = rand(180, 250);
+        $description = $rosor[$title]['description'];
+        $price = $rosor[$title]['price'];
         $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
         $product= new Product(
             $title,
