@@ -139,17 +139,26 @@ $allProductsArray = [
  */
 function addCategory($allProductsArray, $categories)
 {
-  $productsArray = [];
+  $array = [];
   for ($i = 0; $i < count($allProductsArray); $i++) {
-    foreach ($allProductsArray[$i] as &$product)  {
+    foreach ($allProductsArray[$i] as &$product) {
       $product["category"] = $categories[$i];
-      array_push($productsArray, $product);
+      array_push($array, $product);
     };
   }
-  return $productsArray;
+  return $array;
+};
+/***
+ * Add categories to each product
+ */
+function addId($array) {
+  for ($i = 0; $i < count($array); $i++) {
+    $array[$i]["id"] = ($i+1);
+  };
+  return $array;
 };
 
 /***
  * Array for all products with categories
  */
-$productsArray = addCategory($allProductsArray, $categories);
+$productsArray = addId(addCategory($allProductsArray, $categories));
