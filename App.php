@@ -63,7 +63,6 @@ class App
     global $rosor;
     $products = array();
     for ($i = 0; $i < self::$limit; $i++) {
-        //$title = $rosesArray[rand(0, 19)];
         $title = array_rand($rosor,1);
         $description = $rosor[$title]['description'];
         $price = $rosor[$title]['price'];
