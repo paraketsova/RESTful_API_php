@@ -58,10 +58,35 @@ class App
   /**
    * En klassmetod för att hämta product
    */
+
+  /*
   private static function getProducts()
   {
     global $rosor;
     $products = array();
+    for ($i = 0; $i < self::$limit; $i++) {
+        $title = array_rand($rosor,1);
+        $description = $rosor[$title]['description'];
+        $price = $rosor[$title]['price'];
+        $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
+        $product= new Product(
+            $title,
+            $description,
+            $price,
+            $image,
+            rand(1, 20)
+        );
+        array_push($products, $product->toArray());
+      }
+      return $products;
+    }
+  */
+
+  private static function getProducts()
+  {
+    global $rosor;
+    $products = array();
+
     for ($i = 0; $i < self::$limit; $i++) {
         $title = array_rand($rosor,1);
         $description = $rosor[$title]['description'];
