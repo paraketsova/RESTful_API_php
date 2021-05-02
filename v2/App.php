@@ -56,34 +56,54 @@ class App
   }
 
   /**
-   * En klassmetod för att hämta products list
+   * En klassmetod för att hämta product
    */
 
+  /*
   private static function getProducts()
   {
-    global $productsArray;
+    global $rosor;
     $products = array();
-
     for ($i = 0; $i < self::$limit; $i++) {
-        $element = $productsArray[$i];
-        $title = $element["title"];
-        $description = $element["description"];
-        $price = $element["price"];
+        $title = array_rand($rosor,1);
+        $description = $rosor[$title]['description'];
+        $price = $rosor[$title]['price'];
         $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
-        $category = $element["category"];
-        $id = $element["id"];
         $product= new Product(
             $title,
             $description,
             $price,
             $image,
-            $category,
-            $id,
+            rand(1, 20)
+        );
+        array_push($products, $product->toArray());
+      }
+      return $products;
+    }
+  */
+
+  private static function getProducts()
+  {
+    global $rosor;
+    $products = array();
+
+    for ($i = 0; $i < self::$limit; $i++) {
+        $title = array_rand($rosor,1);
+        $description = $rosor[$title]['description'];
+        $price = $rosor[$title]['price'];
+        $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
+        $product= new Product(
+            $title,
+            $description,
+            $price,
+            $image,
             rand(1, 20),
         );
         array_push($products, $product->toArray());
     }
-    return $products;
+    //return $products;
+    global $productsArray;
+    return $products = $productsArray;
 
   }
 
