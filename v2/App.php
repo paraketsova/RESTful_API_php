@@ -82,7 +82,8 @@ class App
     $products = array();
 
     for ($i = 0; $i < self::$limit; $i++) {
-      $element = $productsArray[$i];
+      $j = array_rand($productsArray,1);
+      $element = $productsArray[$j];
       $title = $element["title"];
       $description = $element["description"];
       $price = $element["price"];
