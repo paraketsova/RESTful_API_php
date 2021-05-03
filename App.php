@@ -6,13 +6,6 @@ include_once "ProductsArray.php";
 
 class App
 {
-  //private static $category = ["Roses", "Klematis"];
-  //private static $rosesArray;
-  //private static $roses_description = $rosesDescriptionArray;
-
-  //private static $price = rand(170, 290);
-  //private static $image = null;
-  //private static $limit = isset($_GET["limit"]) ? $_GET["limit"] : 20;
   private static $limit = 20;
   private static $errors = array();
 

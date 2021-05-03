@@ -1,17 +1,11 @@
 <?php
 
-include_once "Product.php";
+include_once "../Product.php";
 
-include_once "ProductsArray.php";
+include_once "../ProductsArray.php";
 
 class App
 {
-  //private static $category = ["Roses", "Klematis"];
-  //private static $rosesArray;
-  //private static $roses_description = $rosesDescriptionArray;
-
-  //private static $price = rand(170, 290);
-  //private static $image = null;
   //private static $limit = isset($_GET["limit"]) ? $_GET["limit"] : 20;
   private static $limit = 20;
   private static $errors = array();
@@ -84,27 +78,29 @@ class App
 
   private static function getProducts()
   {
-    global $rosor;
+    global $productsArray;
     $products = array();
 
     for ($i = 0; $i < self::$limit; $i++) {
-        $title = array_rand($rosor,1);
-        $description = $rosor[$title]['description'];
-        $price = $rosor[$title]['price'];
-        $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
-        $product= new Product(
-            $title,
-            $description,
-            $price,
-            $image,
-            rand(1, 20),
-        );
-        array_push($products, $product->toArray());
-    }
-    //return $products;
-    global $productsArray;
-    return $products = $productsArray;
-
+      $element = $productsArray[$i];
+      $title = $element["title"];
+      $description = $element["description"];
+      $price = $element["price"];
+      $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
+      $category = $element["category"];
+      $id = $element["id"];
+      $product= new Product(
+          $title,
+          $description,
+          $price,
+          $image,
+          $category,
+          $id,
+          rand(1, 20),
+      );
+      array_push($products, $product->toArray());
+  }
+    return $products;
   }
 
   /**
