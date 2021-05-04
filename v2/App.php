@@ -8,6 +8,7 @@ class App
 {
   //private static $limit = isset($_GET["limit"]) ? $_GET["limit"] : 20;
   private static $limit = 20;
+  private static $category = null;
   private static $errors = array();
 
   /**
@@ -20,8 +21,13 @@ class App
     } catch (Exception $error) {
         array_push(self::$errors, array("Limit" => $error->getMessage()));
     }
+    try {
+        self::$category = self::getCategory() ?? self::$category;
+    } catch (Exception $error) {
+        array_push(self::$errors, array("Caterory" => $error->getMessage()));
+    }
 
-    $products = self::getProducts(self::$limit);
+    $products = self::getProducts();
     if (self::$errors) self::renderData(self::$errors);
     else self::renderData($products);
   }
@@ -47,6 +53,19 @@ class App
           throw new Exception("Show must be a number between 1-20!");
       }
       return $limit;
+  }
+
+  /**
+   * En klassmetod för att hämta category
+   */
+  private static function getCategory()
+  {
+      $category = self::getQuery("category");
+      global $categories;
+      if ($category && !in_array($category, $categories)) {
+          throw new Exception("Category not found!");
+      }
+      return $category;
   }
 
   /**
@@ -82,25 +101,30 @@ class App
     $products = array();
 
     for ($i = 0; $i < self::$limit; $i++) {
-      $j = array_rand($productsArray,1);
-      $element = $productsArray[$j];
-      $title = $element["title"];
-      $description = $element["description"];
-      $price = $element["price"];
-      $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
-      $category = $element["category"];
-      $id = $element["id"];
-      $product= new Product(
-          $title,
-          $description,
-          $price,
-          $image,
-          $category,
-          $id,
-          rand(1, 20),
-      );
-      array_push($products, $product->toArray());
-  }
+      while (count($products) < self::$limit) {
+        $j = array_rand($productsArray,1);
+        if (array_key_exists('category', $productsArray[$j]) && $productsArray[$j]['category'] == self::$category) {
+          //$productsArrayCat = array_filter($productsArray, );
+          $element = $productsArray[$j];
+          $title = $element["title"];
+          $description = $element["description"];
+          $price = $element["price"];
+          $image = "https://picsum.photos/500?random=" . ($j) . "";
+          $category = $element["category"];
+          $id = $element["id"];
+          $product= new Product(
+              $title,
+              $description,
+              $price,
+              $image,
+              $category,
+              $id,
+              rand(1, self::$limit),
+          );
+          array_push($products, $product->toArray());
+        };
+      };
+    };
     return $products;
   }
 

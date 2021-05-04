@@ -1,7 +1,6 @@
 <?php
 
 include_once "Product.php";
-
 include_once "ProductsArray.php";
 
 class App
