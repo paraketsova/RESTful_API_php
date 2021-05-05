@@ -44,7 +44,7 @@ class App
 
 
   /**
-   * En klassmetod för att hämta och filtrera query
+   * Metod to filter query
    */
   private static function getQuery($var)
   {
@@ -55,7 +55,7 @@ class App
   }
 
   /**
-   * En klassmetod för att hämta limit
+   * Metod to get limit
    */
   private static function getLimit()
   {

@@ -9,7 +9,7 @@ class App
   private static $errors = array();
 
   /**
-  * The Main Method
+  * The Main Method for all 20 products - ver.1
   */
   public static function main()
   {
@@ -25,7 +25,7 @@ class App
   }
 
   /**
-   * En klassmetod för att hämta och filtrera query
+   * Metod to filter query
    */
   private static function getQuery($var)
   {
@@ -36,7 +36,7 @@ class App
   }
 
   /**
-   * En klassmetod för att hämta limit
+   * Metod to get limit
    */
   private static function getLimit()
   {
@@ -48,7 +48,7 @@ class App
   }
 
   /**
-   * En klassmetod för att hämta products list
+   *  Metod to get products' list
    */
 
   private static function getProducts()
@@ -80,7 +80,7 @@ class App
   }
 
   /**
-   * En klassmetod för att rendera data
+   * Metod to render data
    */
   private static function renderData($products)
   {
