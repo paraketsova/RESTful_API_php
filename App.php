@@ -25,18 +25,18 @@ class App
   }
 
   /**
-   * Metod to filter query
+   * Method to filter query
    */
   private static function getQuery($var)
   {
       if (isset($_GET[$var])) {
-          $query = filter_var($_GET[$var], FILTER_SANITIZE_STRING);//Удаляет теги и кодирует двойные и одинарные кавычки, при необходимости удаляет или кодирует специальные символы.
+          $query = filter_var($_GET[$var], FILTER_SANITIZE_STRING);
           return $query;
       }
   }
 
   /**
-   * Metod to get limit
+   * Method to get limit
    */
   private static function getLimit()
   {
@@ -48,7 +48,7 @@ class App
   }
 
   /**
-   *  Metod to get products' list
+   *  Method to get products' list
    */
 
   private static function getProducts()
@@ -80,7 +80,7 @@ class App
   }
 
   /**
-   * Metod to render data
+   * Method to render data
    */
   private static function renderData($products)
   {

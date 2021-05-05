@@ -20,9 +20,10 @@ class App
     if (self::$errors) self::renderData(self::$errors);
     else self::renderData($products);
   }
+
 //================================================
   /**
-   * Main metod for filtered products - ver.2
+   * Main method for filtered products - ver.2
   */
   public static function getFilteredData()
   {
@@ -38,24 +39,26 @@ class App
     }
 
     $products = self::getFilteredProducts();
+    /* echo 6;
+    exit; */
     if (self::$errors) self::renderData(self::$errors);
     else self::renderData($products);
   }
 
 
   /**
-   * Metod to filter query
+   * Method to filter query
    */
   private static function getQuery($var)
   {
       if (isset($_GET[$var])) {
-          $query = filter_var($_GET[$var], FILTER_SANITIZE_STRING);//Удаляет теги и кодирует двойные и одинарные кавычки, при необходимости удаляет или кодирует специальные символы.
+          $query = filter_var($_GET[$var], FILTER_SANITIZE_STRING);
           return $query;
       }
   }
 
   /**
-   * Metod to get limit
+   * Method to get limit
    */
   private static function getLimit()
   {
@@ -67,7 +70,7 @@ class App
   }
 
   /**
-   * En klassmetod för att hämta category
+   * Method to get category
    */
   private static function getCategory()
   {
@@ -78,8 +81,9 @@ class App
       }
       return $category;
   }
+
   /**
-   * metod for v1 - all 20 products - ver.1
+   * for v1 - method for get all 20 products
    */
   private static function getAllProducts()
   {
@@ -108,54 +112,61 @@ class App
     return $products;
 
   }
+
  /***
   * for v2 - if we have limit or/and category
   */
-
   private static function getFilteredProducts()
   {
     global $productsArray;
+
+    /***
+     * Filter by category
+     */
+    if (self::$category !== null) {
+      $productsArray = array_filter($productsArray, function ($product) {
+      return $product['category'] === self::getQuery('category');
+    });
+    }
+
+    self::$limit = min(self::$limit, count($productsArray));
+
     $products = array();
 
     for ($i = 0; $i < count($productsArray); $i++) {
+
       while (count($products) < self::$limit) {
         $j = array_rand($productsArray,1);
-        if (self::$category !==null) {
-          $categoryProducts = array_column($productsArray, 'category');
-
+        $element = $productsArray[$j];
+        $title = $element["title"];
+        $description = $element["description"];
+        $price = $element["price"];
+        $image = "https://picsum.photos/500?random=" . ($j) . "";
+        $category = $element["category"];
+        $id = $element["id"];
+        $product= new Product(
+            $title,
+            $description,
+            $price,
+            $image,
+            $category,
+            $id,
+            rand(1, self::$limit),
+        );
+        /**
+         * Check the uniqe value for new product in $products
+        */
+        //
+        $idProducts = array_column($products, 'id');
+        if (!in_array($id, $idProducts)) {
+          array_push($products, $product->toArray());
         }
-        if (array_key_exists('category', $productsArray[$j]) && $productsArray[$j]['category'] == self::$category) {
-            $element = $productsArray[$j];
-            $title = $element["title"];
-            $description = $element["description"];
-            $price = $element["price"];
-            $image = "https://picsum.photos/500?random=" . ($j) . "";
-            $category = $element["category"];
-            $id = $element["id"];
-            $product= new Product(
-                $title,
-                $description,
-                $price,
-                $image,
-                $category,
-                $id,
-                rand(1, self::$limit),
-            );
-            /**
-             * Check the uniger value for new product in $prodacts array
-            */
-            //
-            $idProducts = array_column($products, 'id');
-            if (!in_array($id, $idProducts)) {
-              array_push($products, $product->toArray());
-            }
-        };
       };
     };
     return $products;
   }
   /**
-   * En klassmetod för att rendera data
+   * Method to render data
    */
   private static function renderData($products)
   {
