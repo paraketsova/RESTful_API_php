@@ -149,7 +149,7 @@ function addCategory($allProductsArray, $categories)
   return $array;
 };
 /***
- * Add categories to each product
+ * Add Id to each product
  */
 function addId($array) {
   for ($i = 0; $i < count($array); $i++) {

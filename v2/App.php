@@ -12,9 +12,19 @@ class App
   private static $errors = array();
 
   /**
-  * The Main Method
+  * The Main Method for all 20 products - ver.1
   */
-  public static function main()
+  public static function getAllData()
+  {
+    $products = self::getAllProducts();
+    if (self::$errors) self::renderData(self::$errors);
+    else self::renderData($products);
+  }
+//================================================
+  /**
+   * Main metod for filtered products - ver.2
+  */
+  public static function getFilteredData()
   {
     try {
         self::$limit = self::getLimit() ?? self::$limit;
@@ -27,10 +37,11 @@ class App
         array_push(self::$errors, array("Caterory" => $error->getMessage()));
     }
 
-    $products = self::getProducts();
+    $products = self::getFilteredProducts();
     if (self::$errors) self::renderData(self::$errors);
     else self::renderData($products);
   }
+
 
   /**
    * En klassmetod för att hämta och filtrera query
@@ -67,67 +78,82 @@ class App
       }
       return $category;
   }
-
   /**
-   * En klassmetod för att hämta product
+   * metod for v1 - all 20 products - ver.1
    */
-
-  /*
-  private static function getProducts()
-  {
-    global $rosor;
-    $products = array();
-    for ($i = 0; $i < self::$limit; $i++) {
-        $title = array_rand($rosor,1);
-        $description = $rosor[$title]['description'];
-        $price = $rosor[$title]['price'];
-        $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
-        $product= new Product(
-            $title,
-            $description,
-            $price,
-            $image,
-            rand(1, 20)
-        );
-        array_push($products, $product->toArray());
-      }
-      return $products;
-    }
-  */
-
-  private static function getProducts()
+  private static function getAllProducts()
   {
     global $productsArray;
     $products = array();
 
     for ($i = 0; $i < self::$limit; $i++) {
+        $element = $productsArray[$i];
+        $title = $element["title"];
+        $description = $element["description"];
+        $price = $element["price"];
+        $image = "https://picsum.photos/500?random=" . ($i + 1) . "";
+        $category = $element["category"];
+        $id = $element["id"];
+        $product= new Product(
+            $title,
+            $description,
+            $price,
+            $image,
+            $category,
+            $id,
+            rand(1, 20),
+        );
+        array_push($products, $product->toArray());
+    }
+    return $products;
+
+  }
+ /***
+  * for v2 - if we have limit or/and category
+  */
+
+  private static function getFilteredProducts()
+  {
+    global $productsArray;
+    $products = array();
+
+    for ($i = 0; $i < count($productsArray); $i++) {
       while (count($products) < self::$limit) {
         $j = array_rand($productsArray,1);
+        if (self::$category !==null) {
+          $categoryProducts = array_column($productsArray, 'category');
+
+        }
         if (array_key_exists('category', $productsArray[$j]) && $productsArray[$j]['category'] == self::$category) {
-          //$productsArrayCat = array_filter($productsArray, );
-          $element = $productsArray[$j];
-          $title = $element["title"];
-          $description = $element["description"];
-          $price = $element["price"];
-          $image = "https://picsum.photos/500?random=" . ($j) . "";
-          $category = $element["category"];
-          $id = $element["id"];
-          $product= new Product(
-              $title,
-              $description,
-              $price,
-              $image,
-              $category,
-              $id,
-              rand(1, self::$limit),
-          );
-          array_push($products, $product->toArray());
+            $element = $productsArray[$j];
+            $title = $element["title"];
+            $description = $element["description"];
+            $price = $element["price"];
+            $image = "https://picsum.photos/500?random=" . ($j) . "";
+            $category = $element["category"];
+            $id = $element["id"];
+            $product= new Product(
+                $title,
+                $description,
+                $price,
+                $image,
+                $category,
+                $id,
+                rand(1, self::$limit),
+            );
+            /**
+             * Check the uniger value for new product in $prodacts array
+            */
+            //
+            $idProducts = array_column($products, 'id');
+            if (!in_array($id, $idProducts)) {
+              array_push($products, $product->toArray());
+            }
         };
       };
     };
     return $products;
   }
-
   /**
    * En klassmetod för att rendera data
    */

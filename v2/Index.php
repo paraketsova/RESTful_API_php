@@ -5,4 +5,11 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header("Referrer-Policy: no-referrer");
-App::main();
+//App::main();
+
+if (!$_GET) {
+  App::getAllData();
+  exit;
+}
+
+App::getFilteredData();
