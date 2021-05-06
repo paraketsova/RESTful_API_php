@@ -1,17 +1,22 @@
 <?php
-
 include_once "../Product.php";
-
 include_once "../ProductsArray.php";
-
 class App
 {
-  //private static $limit = isset($_GET["limit"]) ? $_GET["limit"] : 20;
+  /********************************************************
+  * Variable to change the number of products displayed per page.
+  */
   private static $limit = 20;
+  /********************************************************
+  * Variable for 'category' of products.
+  */
   private static $category = null;
+  /********************************************************
+  * Array to store error messages
+  */
   private static $errors = array();
 
-  /**
+  /**********************************************************
   * The Main Method for all 20 products - ver.1
   */
   public static function getAllData()
@@ -20,9 +25,7 @@ class App
     if (self::$errors) self::renderData(self::$errors);
     else self::renderData($products);
   }
-
-//================================================
-  /**
+  /**********************************************************
    * Main method for filtered products - ver.2
   */
   public static function getFilteredData()
@@ -39,14 +42,12 @@ class App
     }
 
     $products = self::getFilteredProducts();
-    /* echo 6;
-    exit; */
+
     if (self::$errors) self::renderData(self::$errors);
     else self::renderData($products);
   }
 
-
-  /**
+  /**********************************************************
    * Method to filter query
    */
   private static function getQuery($var)
@@ -57,8 +58,8 @@ class App
       }
   }
 
-  /**
-   * Method to get limit
+  /**********************************************************
+   * Method to get 'limit' - to change the number of products displayed per page.
    */
   private static function getLimit()
   {
@@ -69,7 +70,7 @@ class App
       return $limit;
   }
 
-  /**
+  /**********************************************************
    * Method to get category
    */
   private static function getCategory()
@@ -82,7 +83,7 @@ class App
       return $category;
   }
 
-  /**
+  /**********************************************************
    * for v1 - method for get all 20 products
    */
   private static function getAllProducts()
@@ -113,14 +114,14 @@ class App
 
   }
 
- /***
-  * for v2 - if we have limit or/and category
+ /**********************************************************
+  * for v2 - method to filtering product if we have 'limit' or/and 'category' by query string
   */
   private static function getFilteredProducts()
   {
     global $productsArray;
 
-    /***
+    /*****************************************************
      * Filter by category
      */
     if (self::$category !== null) {
@@ -153,7 +154,7 @@ class App
             $id,
             rand(1, self::$limit),
         );
-        /**
+        /***************************************************
          * Check the uniqe value for new product in $products
         */
         //
@@ -165,7 +166,7 @@ class App
     };
     return $products;
   }
-  /**
+  /**********************************************************
    * Method to render data
    */
   private static function renderData($products)

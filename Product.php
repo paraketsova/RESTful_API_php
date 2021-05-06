@@ -7,9 +7,8 @@ class Product
   private $image;
   private $category;
   private $id;
-  /**
-     * En konstruktor
-     * förväntar sig firstName, lastName, gender, age
+  /***************************************************
+     * Constructor for creating object from a class 'Product'
      */
     public function __construct($title, $description, $price, $image, $category, $id)
     {
@@ -20,9 +19,9 @@ class Product
         $this->category = $category;
         $this->id = $id;
     }
-  /***
-  * En instansmetod!
-  * Konverterar objekt till array
+  /***************************************************
+  * Instance method to conversion
+  * object to array
   */
   public function toArray()
   {

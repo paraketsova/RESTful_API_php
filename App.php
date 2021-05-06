@@ -5,10 +5,16 @@ include_once "ProductsArray.php";
 
 class App
 {
+  /********************************************************
+   * Variable to change the number of products displayed per page.
+   */
   private static $limit = 20;
+  /********************************************************
+   * Array to store error messages
+   */
   private static $errors = array();
 
-  /**
+  /**********************************************************
   * The Main Method for all 20 products - ver.1
   */
   public static function main()
@@ -24,7 +30,7 @@ class App
     else self::renderData($products);
   }
 
-  /**
+  /**********************************************************
    * Method to filter query
    */
   private static function getQuery($var)
@@ -35,7 +41,7 @@ class App
       }
   }
 
-  /**
+  /**********************************************************
    * Method to get limit
    */
   private static function getLimit()
@@ -47,7 +53,7 @@ class App
       return $limit;
   }
 
-  /**
+  /**********************************************************
    *  Method to get products' list
    */
 
@@ -79,7 +85,7 @@ class App
 
   }
 
-  /**
+  /**********************************************************
    * Method to render data
    */
   private static function renderData($products)

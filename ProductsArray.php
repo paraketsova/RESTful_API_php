@@ -1,11 +1,11 @@
 <?php
-/**
- * ----------
- * Products' arrays:
- * ---------
+/**********************************************************
+ * ----------------
+ * Products' arrays for flower shop:
+ * ----------------
  * $rosor - roses' sorts with description.
  * $klematis - clematis' sorts with description.
- * $pioner - pions with description
+ * $pioner - pions with description.
  */
 $rosor = [
   [
@@ -116,7 +116,7 @@ $pioner = [
   ]
 ];
 
-/***
+/**********************************************************
  * Names of all products' categories
  */
 $categories = [
@@ -125,7 +125,7 @@ $categories = [
   "pioner"
 ];
 
-/***
+/**********************************************************
  * Supporting array of all products without categories key for each product
  */
 $allProductsArray = [
@@ -134,8 +134,8 @@ $allProductsArray = [
   $pioner
 ];
 
-/***
- * Add categories to each product
+/**********************************************************
+ * Add name of categorie to each product's array
  */
 function addCategory($allProductsArray, $categories)
 {
@@ -148,8 +148,8 @@ function addCategory($allProductsArray, $categories)
   }
   return $array;
 };
-/***
- * Add Id to each product
+/**********************************************************
+ * Add Id to each product's array
  */
 function addId($array) {
   for ($i = 0; $i < count($array); $i++) {
@@ -158,7 +158,7 @@ function addId($array) {
   return $array;
 };
 
-/***
- * Array for all products with categories
+/**********************************************************
+ * Resulting array for all products
  */
 $productsArray = addId(addCategory($allProductsArray, $categories));
