@@ -65,10 +65,14 @@ class App
   {
       $limit = self::getQuery("show");
 
-      if ($limit < 1 || $limit > 20 || $limit % 1 !== 0) {
-        throw new Exception("Show must be a number between 1-20!");
-
+      if ($limit == null) {
+        return $limit;
       }
+
+      if ($limit < 1 || $limit > 20) {
+        throw new Exception("Show must be a number between 1-20!");
+      }
+
       return $limit;
   }
 
