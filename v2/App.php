@@ -38,7 +38,7 @@ class App
     try {
         self::$category = self::getCategory() ?? self::$category;
     } catch (Exception $error) {
-        array_push(self::$errors, array("Caterory" => $error->getMessage()));
+        array_push(self::$errors, array("Category" => $error->getMessage()));
     }
 
     $products = self::getFilteredProducts();
