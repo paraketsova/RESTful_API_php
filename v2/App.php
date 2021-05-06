@@ -134,6 +134,9 @@ class App
 
     self::$limit = min(self::$limit, count($productsArray));
 
+    /*****************************************************
+     * Create a final array for filtered products
+     */
     $products = array();
 
     for ($i = 0; $i < count($productsArray); $i++) {
